@@ -115,7 +115,7 @@
 				qcom,pin-num = <4>;
 			};
 		};
-/*ztebsp khl modify for rtc power on start*/
+
 		pm8916_rtc: qcom,pm8916_rtc {
                         spmi-dev-container;
                         compatible = "qcom,qpnp-rtc";
@@ -132,7 +132,7 @@
                                 interrupts = <0x0 0x61 0x1>;
                         };
                 };
-/*ztebsp khl modify for rtc power on end*/
+
 		pm8916_vadc: vadc@3100 {
 			compatible = "qcom,qpnp-vadc";
 			reg = <0x3100 0x100>;
