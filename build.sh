@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ARCH=arm
+export ARCH=arm64
 export CROSS_COMPILE="/home/sattarvoybek/android_prebuilt_toolchains/arm-eabi-4.8/bin/arm-eabi-"
 
 
