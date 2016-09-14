@@ -294,6 +294,7 @@ cpufreq_verify_within_cpu_limits(struct cpufreq_policy *policy)
 
 #define CPUFREQ_TRANSITION_NOTIFIER	(0)
 #define CPUFREQ_POLICY_NOTIFIER		(1)
+#define CPUFREQ_GOVINFO_NOTIFIER	(2)
 
 /* Transition notifiers */
 #define CPUFREQ_PRECHANGE		(0)
@@ -310,14 +311,15 @@ cpufreq_verify_within_cpu_limits(struct cpufreq_policy *policy)
 #define CPUFREQ_CREATE_POLICY		(5)
 #define CPUFREQ_REMOVE_POLICY		(6)
 
+/* Govinfo Notifiers */
+#define CPUFREQ_LOAD_CHANGE		(0)
+
 #ifdef CONFIG_CPU_FREQ
 int cpufreq_register_notifier(struct notifier_block *nb, unsigned int list);
 int cpufreq_unregister_notifier(struct notifier_block *nb, unsigned int list);
 
 void cpufreq_notify_transition(struct cpufreq_policy *policy,
 		struct cpufreq_freqs *freqs, unsigned int state);
-<<<<<<< HEAD
-=======
 
 void cpufreq_notify_utilization(struct cpufreq_policy *policy,
 		unsigned int load);
@@ -332,7 +334,6 @@ struct cpufreq_govinfo {
 	unsigned int sampling_rate_us;
 };
 extern struct atomic_notifier_head cpufreq_govinfo_notifier_list;
->>>>>>> d6d314b... Add: Governor=alucard,darkness,nightmare,ondemandplus,HYPER,elementalx,impulse,yankactive,zzmoove
 
 #else /* CONFIG_CPU_FREQ */
 static inline int cpufreq_register_notifier(struct notifier_block *nb,
